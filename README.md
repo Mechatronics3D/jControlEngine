@@ -5,8 +5,6 @@ jControlEngine includes:
    - cvxpy
    - Cvxflow
    - JModelica
-   - ACADO
-   - APMonitor
    - Python Control Systems Library
 
 ## Usage
