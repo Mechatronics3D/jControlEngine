@@ -45,8 +45,7 @@ RUN mkdir $DL/control-$CTRLVERSION
 RUN wget https://sourceforge.net/projects/python-control/files/control-$CTRLVERSION.tar.gz/download \
     -O $DL/control-$CTRLVERSION.tar.gz
 RUN tar xzf $DL/control-$CTRLVERSION.tar.gz -C $DL/control-$CTRLVERSION && \
-    cd $DL/control-$CTRLVERSION && \
-    python setup.py install
+    cd $DL/control-$CTRLVERSION
 
 RUN mkdir $WS
 
