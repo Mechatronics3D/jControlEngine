@@ -41,13 +41,14 @@ ENV USER=jserver
 
 RUN mkdir $DL
 
+RUN mkdir $WS
+
 RUN mkdir $DL/control-$CTRLVERSION
 RUN wget https://sourceforge.net/projects/python-control/files/control-$CTRLVERSION.tar.gz/download \
     -O $DL/control-$CTRLVERSION.tar.gz
 RUN tar zxvf $DL/control-$CTRLVERSION.tar.gz -C $DL/control-$CTRLVERSION && \
-    cd $DL/control-$CTRLVERSION/control-$CTRLVERSION && python setup.py install
-
-RUN mkdir $WS
+    cd $DL/control-$CTRLVERSION/control-$CTRLVERSION && python setup.py install && \
+    cp -R examples $WS/control-$CTRLVERSION/examples
 
 RUN cd $WS && mkdir cvxpy && mkdir cvxflow
 
