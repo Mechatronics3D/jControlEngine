@@ -37,13 +37,17 @@ RUN adduser \
 			--quiet \
 			jserver
 
+ENV USER=jserver
+
+RUN mkdir $DL
+
 RUN wget https://sourceforge.net/projects/python-control/files/control-$CTRLVERSION.tar.gz/download \
     -O $DL/control-$CTRLVERSION.tar.gz
 RUN tar xzf $DL/control-$CTRLVERSION.tar.gz -C $DL/control-$CTRLVERSION && \
     cd $DL/control-$CTRLVERSION && \
     python setup.py install
 
-ENV USER=jserver
+RUN mkdir $WS
 
 RUN cd $WS && mkdir cvxpy && mkdir cvxflow
 
