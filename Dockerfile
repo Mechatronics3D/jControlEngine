@@ -13,6 +13,7 @@ ENV WS=/home/jserver/workspace
 
 ENV PKGS="wget unzip gcc g++ gfortran git cmake liblapack-dev pkg-config swig spyder time"
 ENV Py2_PKGS="python-pip python-numpy python-scipy python-matplotlib"
+ENV Py3_PKGS="python3-pip python3-numpy python3-scipy python3-matplotlib"
 ENV JM_PKGS="cython jcc subversion ant openjdk-6-jdk python-dev python-svn python-lxml python-nose zlib1g-dev libboost-dev dpkg-dev build-essential libwebkitgtk-dev libjpeg-dev libtiff-dev libgtk2.0-dev libsdl1.2-dev libgstreamer-plugins-base0.10-dev libnotify-dev freeglut3 freeglut3-dev"
 ENV ACADO_PKGS="gnuplot doxygen graphviz"
 ENV PIP2="jupyter vpython CVXcanon cvxpy APMonitor"
@@ -21,6 +22,7 @@ ENV PIP2="jupyter vpython CVXcanon cvxpy APMonitor"
 RUN apt-get update && \
     apt-get install -y --install-recommends $PKGS && \
     apt-get install -y --install-recommends $Py2_PKGS && \
+    apt-get install -y --install-recommends $Py3_PKGS && \    
     apt-get install -y --install-recommends $ACADO_PKGS
 
 RUN pip install --upgrade pip
