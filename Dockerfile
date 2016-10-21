@@ -27,6 +27,9 @@ RUN pip install --upgrade pip
 
 RUN pip install $PIP2
 
+RUN python3 -m pip install ipykernel
+RUN python3 -m ipykernel install --user
+
 # Create user and group
 RUN adduser \
 			--home /home/jserver \
