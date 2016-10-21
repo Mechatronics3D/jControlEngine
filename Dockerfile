@@ -44,6 +44,7 @@ RUN mkdir $DL
 RUN mkdir $WS
 
 RUN mkdir $DL/control-$CTRLVERSION
+RUN mkdir $WS/control-$CTRLVERSION
 RUN mkdir $WS/control-$CTRLVERSION/examples
 
 RUN wget https://sourceforge.net/projects/python-control/files/control-$CTRLVERSION.tar.gz/download \
