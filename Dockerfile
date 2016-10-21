@@ -56,7 +56,7 @@ RUN wget https://sourceforge.net/projects/python-control/files/control-$CTRLVERS
     -O $DL/control-$CTRLVERSION.tar.gz
 RUN tar zxvf $DL/control-$CTRLVERSION.tar.gz -C $DL/control-$CTRLVERSION && \
     cd $DL/control-$CTRLVERSION/control-$CTRLVERSION && python setup.py install && \
-    cp -R examples $WS/control-$CTRLVERSION/examples
+    cp -R examples $WS/control-$CTRLVERSION
 
 RUN cd $WS && mkdir cvxpy && mkdir cvxflow
 
